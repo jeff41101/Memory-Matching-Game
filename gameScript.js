@@ -1,7 +1,13 @@
-var em = ["💐","🌹","🌻","🏵️","🌺","🌴","🌈","🍓","🍒","🍎","🍉","🍊","🥭","🍍","🍋","🍏","🍐","🥝","🍇","🥥","🍅","🌶️","🍄","🧅","🥦","🥑","🍔","🍕","🧁","🎂","🍬","🍩","🍫","🎈"];
+//var em = ["💐", "🌹", "🌻", "🏵️", "🌺", "🌴", "🌈", "🍓", "🍒", "🍎", "🍉", "🍊", "🥭", "🍍", "🍋", "🍏", "🍐", "🥝", "🍇", "🥥", "🍅", "🌶️", "🍄", "🧅", "🥦", "🥑", "🍔", "🍕", "🧁", "🎂", "🍬", "🍩", "🍫", "🎈"];
+var em = [];
 //Shuffling above array
+for (var n = 10; n > 0; n--) {
+    var str = `Images/img${n - 1}.png`;
+    em.push(str);
+}
+
 var tmp, c, p = em.length;
-if(p) while(--p) {
+if (p) while (--p) {
    c = Math.floor(Math.random() * (p + 1));
    tmp = em[c];
    em[c] = em[p];
@@ -62,9 +68,10 @@ function start(r,l) {
     var n=1;
     for (var i = 1;i<=r;i++) {
         $("table").append("<tr>");
-        for (var j = 1;j<=l;j++) {
-           $("table").append(`<td id='${n}' onclick="change(${n})"><div class='inner'><div class='front'></div><div class='back'><p>${items[n-1]}</p></div></div></td>`);
-           n++;
+        for (var j = 1; j <= l; j++) {
+            //$("table").append(`<td id='${n}' onclick="change(${n})"><div class='inner'><div class='front'></div><div class='back'><p>${items[n - 1]}</p></div></div></td>`);
+            $("table").append(`<td id='${n}' onclick="change(${n})"><div class='inner'><div class='front'></div><div class='back'><img id ="img${n}" src=${items[n - 1]}></div></div></td>`);
+            n++;
          }
          $("table").append("</tr>");
     }
@@ -78,7 +85,12 @@ function change(x) {
   //Variables
   let i = "#"+x+" .inner";
   let f = "#"+x+" .inner .front";
-  let b = "#"+x+" .inner .back";
+  let b = "#" + x + " .inner .back";
+
+    console.log('i =' + i);
+    console.log('f =' + f);
+    console.log('b =' + b);
+
   
   //Dont flip for these conditions
   if (turn==2 || $(i).attr("flip")=="block" || ppID==x) {}
@@ -89,9 +101,11 @@ function change(x) {
     if (turn==1) {
       //This value will prevent spam clicking
       turn=2;
-      
+
+      str = 'img' + x;
+      pre2 = document.getElementById(str).src;
       //If both flipped blocks are not same
-      if (pre!=$(b).text()) {
+      if (pre!=pre2) {
          setTimeout(function() {
             $(pID).css(t, flipBack);
             $(i).css(t, flipBack);
@@ -115,10 +129,12 @@ function change(x) {
       
     }
     else {
-      pre = $(b).text();
-      ppID = x;
-      pID = "#"+x+" .inner";
-      turn=1;
+        str = 'img' + x;
+        pre = document.getElementById(str).src;
+        console.log(pre);
+        ppID = x;
+        pID = "#"+x+" .inner";
+        turn=1;
     }
     
     //If all pairs are matched

@@ -19,8 +19,8 @@ p {
 }
 td {
     background-color: transparent;
-    height:70px;
-    width:70px;
+    height:200px;
+    width: 200px;
 }
 td, .inner, .front, .back {
     border-radius: 4px;
