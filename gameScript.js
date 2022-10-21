@@ -29,8 +29,14 @@ function init() {
 
 fetch('./data.json')
     .then((response) => response.json())
-    .then(data => { obj = data })
-    .then(() => console.log(obj));
+    .then((data) => console.log(data));
+
+async function fun() {
+    return fetch('./data.json').then(res => res.json());
+}
+
+const data1= await fun();
+console.log('data1:' + data1);
 
 //Showing instructions
 window.onload = function() {
