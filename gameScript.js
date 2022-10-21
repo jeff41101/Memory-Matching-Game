@@ -16,7 +16,7 @@ if (p) while (--p) {
 
 //Variables
 var pre="", pID, ppID=0, turn=0, t="transform", flip="rotateY(180deg)", flipBack="rotateY(0deg)", time, mode;
-var data;
+var obj;
 
 //Resizing Screen
 window.onresize = init;
@@ -29,10 +29,10 @@ function init() {
 
 fetch('./data.json')
     .then((response) => response.json())
-    .then((response) => data = response)
+    .then(data => obj = data)
     .then((json) => console.log(json));
 
-console.log(data)
+console.log(obj)
 
 
 //Showing instructions
