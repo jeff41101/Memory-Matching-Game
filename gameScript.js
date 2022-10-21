@@ -30,10 +30,7 @@ function init() {
 fetch('./data.json')
     .then((response) => response.json())
     .then(data => { obj = data })
-    .then((json) => console.log(json));
-
-console.log(obj)
-
+    .then(() => console.log(obj));
 
 //Showing instructions
 window.onload = function() {
