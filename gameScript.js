@@ -29,7 +29,7 @@ function init() {
 
 fetch('./data.json')
     .then((response) => response.json())
-    .then((data) => console.log(data));
+    .then((json) => console.log(json));
 
 async function fun() {
     return fetch('./data.json').then(res => res.json());
