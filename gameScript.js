@@ -26,6 +26,11 @@ function init() {
    $('#ol').height(H+"px");
 }
 
+fetch('./data.json')
+    .then((response) => response.json())
+    .then((json) => console.log(json));
+
+
 //Showing instructions
 window.onload = function() {
     //$("#ol").html(`<center><div id="inst"><h3>Welcome !</h3>Instructions For Game<br/><br/><li>Make pairs of similiar blocks by flipping them.</li><li>To flip a block you can click on it.</li><li>If two blocks you clicked are not similar, they will be flipped back.</li><p style="font-size:18px;">Click one of the following mode to start the game.</p></div><button onclick="start(3, 4)">3 x 4</button> <button onclick="start(4, 4)" style="w">4 x 4</button><button onclick="start(4, 5)">4 x 5</button><button onclick="start(5, 6)">5 x 6</button><button onclick="start(6, 6)">6 x 6</button></center>`);
@@ -71,7 +76,17 @@ function start(r,l) {
         $("table").append("<tr>");
         for (var j = 1; j <= l; j++) {
             //$("table").append(`<td id='${n}' onclick="change(${n})"><div class='inner'><div class='front'></div><div class='back'><p>${items[n - 1]}</p></div></div></td>`);
-            $("table").append(`<td id='${n}' onclick="change(${n})"><div class='inner'><div class='front'></div><div class='back'><img id ="img${n}" src=${items[n - 1]}></div></div></td>`);
+            $("table").append(
+                `<td id='${n}' onclick="change(${n})">
+                    <div class='inner'>
+                        <div class='front'></div>
+                        <div class='back container'><img class="image" id ="img${n}" src=${items[n - 1]}>
+                            <div class="middle">
+                                <div class="text">John Doe</div>
+                            </div>
+                        </div>
+                    </div>
+                </td>`);
             n++;
          }
          $("table").append("</tr>");
