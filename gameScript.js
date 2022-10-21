@@ -32,7 +32,7 @@ fetch('./data.json')
     .then(data = reponse.json())
     .then((json) => console.log(json));
 
-console.log(json)
+console.log(data)
 
 
 //Showing instructions
