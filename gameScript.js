@@ -34,9 +34,12 @@ fetch('./data.json')
 async function fun() {
     return fetch('./data.json').then(res => res.json());
 }
+async function a() {
+    const data1 = await fun();
+    console.log('data1:' + data1);
+}
 
-const data1= await fun();
-console.log('data1:' + data1);
+a();
 
 //Showing instructions
 window.onload = function() {
