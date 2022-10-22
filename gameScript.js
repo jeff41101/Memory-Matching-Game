@@ -29,28 +29,25 @@ function init() {
 
 var data;
 
-fetch('./data.json')
+data = fetch('./data.json')
     .then((response) => response.json())
     .then((json) => {
-        console.log(json);
-        data = json;
-        console.log(data);
+        return json
     });
 
 console.log(data);
 
 
-$(document).ready(function () {
-    $.getJSON("data.json", function (data) {
-        data1 = data;
-        console.log(data);
-        console.log(data1);
-    }).fail(function () {
-        console.log("An error has occurred.");
-    });
-});
+//var data = $(function () {
+//    $.getJSON("data.json", function (data) {
+//        return data
+//        console.log(data);
+//    }).fail(function () {
+//        console.log("An error has occurred.");
+//    });
+//});
 
-console.log(data1);
+//console.log(data1);
 
 //Showing instructions
 window.onload = function() {
