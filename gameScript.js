@@ -39,7 +39,7 @@ data = fetch('./data.json')
 
 console.log(temp);
 console.log(data);
-console.log(temp[0]);
+console.log(temp[0].id);
 
 //var data = $(function () {
 //    $.getJSON("data.json", function (data) {
