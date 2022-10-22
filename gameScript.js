@@ -38,15 +38,19 @@ fetch('./data.json')
     });
 
 console.log(data);
-/*async function fun() {
-    return fetch('./data.json').then(res => res.json());
-}
-async function a() {
-    const data1 = await fun();
-    console.log('data1:' + data1);
-}
 
-a();*/
+var data1;
+
+$(document).ready(function () {
+    $.getJSON("data.json", function (data) {
+        data1 = data;
+        console.log(data.name); // Prints: Harry
+        console.log(data.id); // Prints: 14
+    }).fail(function () {
+        console.log("An error has occurred.");
+    });
+
+console.log(data1);
 
 //Showing instructions
 window.onload = function() {
