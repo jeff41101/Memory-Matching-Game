@@ -33,7 +33,7 @@ var temp = [];
 data = fetch('./data.json')
     .then((response) =>  response.json())
     .then((data) => {
-        return data.json(); 
+        return data
     })
 
 console.log(data);
