@@ -40,6 +40,7 @@ fetch('./data.json')
 console.log(data);
 
 var data1;
+console.log(data1);
 
 $(document).ready(function () {
     $.getJSON("data.json", function (data) {
