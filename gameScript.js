@@ -27,11 +27,12 @@ function init() {
    $('#ol').height(H+"px");
 }
 
-fetch('./data.json')
-    .then((response) => response.json())
+var data = fetch('./data.json')
+    .then((response) => { return response.json(); })
     .then((json) => console.log(json));
 
-async function fun() {
+console.log(data);
+/*async function fun() {
     return fetch('./data.json').then(res => res.json());
 }
 async function a() {
@@ -39,7 +40,7 @@ async function a() {
     console.log('data1:' + data1);
 }
 
-a();
+a();*/
 
 //Showing instructions
 window.onload = function() {
