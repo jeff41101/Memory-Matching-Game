@@ -34,6 +34,7 @@ fetch('./data.json')
     .then((json) => {
         console.log(json);
         data = json;
+        console.log(data);
     });
 
 console.log(data);
