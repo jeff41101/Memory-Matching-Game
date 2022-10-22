@@ -28,15 +28,17 @@ function init() {
 }
 
 var data;
+var temp = [];
 
 data = fetch('./data.json')
     .then((response) => response.json())
+    .then((data) => temp.push(data))
     .then((json) => {
-        return json
+        return json;
     });
 
+console.log(temp);
 console.log(data);
-
 
 //var data = $(function () {
 //    $.getJSON("data.json", function (data) {
