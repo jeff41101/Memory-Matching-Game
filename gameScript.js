@@ -48,6 +48,8 @@ data = JSON.parse(data);
 
 //console.log(typeof temp);
 console.log(data);
+console.log(data[0].id);
+console.log(data[0].name);
 
 //var data = $(function () {
 //    $.getJSON("data.json", function (data) {
