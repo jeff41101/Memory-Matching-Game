@@ -27,11 +27,13 @@ function init() {
    $('#ol').height(H+"px");
 }
 
+let data;
+
 fetch('./data.json')
     .then((response) => response.json())
     .then((json) => {
         console.log(json);
-        let data = json;
+        data = json;
     });
 
 console.log(data);
