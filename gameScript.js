@@ -32,21 +32,20 @@ var temp = [];
 
 data = fetch('./data.json')
     .then((response) => response.json())
-    .then((data) => {
-        return data
-    })
-    .then((json) => console.log(json));
+    //.then((data) => {
+    //    return data
+    //})
+    .then((json) => {
+        console.log(json);
+        return json;
+    });
 
 console.log(data);
 data = JSON.stringify(data);
 
 console.log(data);
 data = JSON.parse(data);
-    //.then((json) => {
-    //    return json;
-    //});
 
-//console.log(typeof temp);
 console.log(data);
 console.log(data[0].id);
 console.log(data[0].name);
