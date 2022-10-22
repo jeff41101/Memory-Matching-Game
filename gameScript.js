@@ -31,13 +31,13 @@ var data;
 var temp = [];
 
 data = fetch('./data.json')
-    .then((response) => response.json())
+    .then((response) => { return response.json(); })
     .then((data) => temp.push(data))
-    .then((json) => {
-        return json;
-    });
+    //.then((json) => {
+    //    return json;
+    //});
 
-console.log(typeof temp);
+//console.log(typeof temp);
 console.log(data);
 
 //var data = $(function () {
