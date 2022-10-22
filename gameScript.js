@@ -42,7 +42,7 @@ console.log(data);
 var data1;
 
 $(document).ready(function () {
-    $.getJSON("test.json", function (data) {
+    $.getJSON("data.json", function (data) {
         console.log(data.name); // Prints: Harry
         console.log(data.age); // Prints: 14
     }).fail(function () {
