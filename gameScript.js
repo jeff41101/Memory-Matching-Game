@@ -27,7 +27,7 @@ function init() {
    $('#ol').height(H+"px");
 }
 
-let data;
+var data;
 
 fetch('./data.json')
     .then((response) => response.json())
