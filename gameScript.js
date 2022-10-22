@@ -31,8 +31,10 @@ var data;
 var temp = [];
 
 data = fetch('./data.json')
-    .then((response) => { return response.json(); })
-    .then((data) => temp.push(data))
+    .then((response) =>  response.json())
+    .then((data) => {
+        return data.json(); 
+    })
 
 console.log(data);
 data = JSON.stringify(data);
