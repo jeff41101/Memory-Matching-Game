@@ -49,7 +49,7 @@ $(document).ready(function () {
     }).fail(function () {
         console.log("An error has occurred.");
     });
-
+}
 console.log(data1);
 
 //Showing instructions
