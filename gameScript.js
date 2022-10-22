@@ -37,9 +37,8 @@ data = fetch('./data.json')
         return json;
     });
 
-console.log(temp);
+console.log(typeof temp);
 console.log(data);
-console.log(temp[0].id);
 
 //var data = $(function () {
 //    $.getJSON("data.json", function (data) {
