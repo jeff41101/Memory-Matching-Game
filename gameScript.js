@@ -45,6 +45,7 @@ $(document).ready(function () {
     $.getJSON("data.json", function (data) {
         data1 = data;
         console.log(data);
+        console.log(data1);
     }).fail(function () {
         console.log("An error has occurred.");
     });
