@@ -27,9 +27,12 @@ function init() {
    $('#ol').height(H+"px");
 }
 
-var data = fetch('./data.json')
-    .then((response) => { return response.json(); })
-    .then((json) => console.log(json));
+fetch('./data.json')
+    .then((response) => response.json())
+    .then((json) => {
+        console.log(json);
+        let data = json;
+    });
 
 console.log(data);
 /*async function fun() {
