@@ -42,14 +42,14 @@ console.log(data);
 var data1;
 
 $(document).ready(function () {
-    $.getJSON("data.json", function (data) {
-        data1 = data;
+    $.getJSON("test.json", function (data) {
         console.log(data.name); // Prints: Harry
-        console.log(data.id); // Prints: 14
+        console.log(data.age); // Prints: 14
     }).fail(function () {
         console.log("An error has occurred.");
     });
-}
+});
+
 console.log(data1);
 
 //Showing instructions
