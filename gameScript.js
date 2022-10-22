@@ -33,6 +33,12 @@ var temp = [];
 data = fetch('./data.json')
     .then((response) => { return response.json(); })
     .then((data) => temp.push(data))
+
+console.log(data);
+data = JSON.stringify(data);
+
+console.log(data);
+data = JSON.parse(data);
     //.then((json) => {
     //    return json;
     //});
