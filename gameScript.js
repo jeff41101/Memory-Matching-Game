@@ -96,29 +96,30 @@ function start(r, l) {
 
     for (var i = 1; i <= r; i++) {
             $("table").append("<tr>");
-            for (var j = 1; j <= l; j++) {
-                m = itemNumbers[n];
-                console.log(itemNumbers);
-                console.log(itemNumbers[0]);
-                console.log(typeof itemNumbers);
-                console.log(m);
-                console.log(mydata[m]);
-                //$("table").append(`<td id='${n}' onclick="change(${n})"><div class='inner'><div class='front'></div><div class='back'><p>${items[n - 1]}</p></div></div></td>`);
-                $("table").append(
-                    `<td id='${n}' onclick="change(${n})">
-                    <div class='inner'>
-                        <div class='front'></div>
-                        <div class='back container'><img class="image" id ="img${n}" src=${items[n - 1]}>
-                            <div class="middle">
-                                <div class="text"><pre>id = ${mydata[m]} </pre></div>
-                            </div>
+        for (var j = 1; j <= l; j++) {
+            console.log(n);
+            m = itemNumbers[n];
+            console.log(itemNumbers);
+            console.log(itemNumbers[0]);
+            console.log(typeof itemNumbers);
+            console.log(m);
+            console.log(mydata[m]);
+            //$("table").append(`<td id='${n}' onclick="change(${n})"><div class='inner'><div class='front'></div><div class='back'><p>${items[n - 1]}</p></div></div></td>`);
+            $("table").append(
+                `<td id='${n}' onclick="change(${n})">
+                <div class='inner'>
+                    <div class='front'></div>
+                    <div class='back container'><img class="image" id ="img${n}" src=${items[n - 1]}>
+                        <div class="middle">
+                            <div class="text"><pre>id = ${mydata[m]} </pre></div>
                         </div>
                     </div>
-                </td>`);
-                n++;
-            }
-            $("table").append("</tr>");
+                </div>
+            </td>`);
+            n++;
         }
+        $("table").append("</tr>");
+    }
 
     //Hiding instructions screen
     $("#ol").fadeOut(500);
