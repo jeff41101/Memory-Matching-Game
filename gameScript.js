@@ -75,7 +75,7 @@ function start(r,l) {
     // Grabbing the numbers of new item array
     var itemNumbers = [];
     for (var i=0;i<items.length;i++) {
-        itemNumbers.push(items[i].substring(10, items[i].length - 4));
+        itemNumbers.push(parseInt(items[i].substring(10, items[i].length - 4), 10));
     }
 
     console.log(itemNumbers);
@@ -93,7 +93,7 @@ function start(r,l) {
                         <div class='front'></div>
                         <div class='back container'><img class="image" id ="img${n}" src=${items[n - 1]}>
                             <div class="middle">
-                                <div class="text">John Doe</div>
+                                <div class="text"><pre>id = ${itemNumbers[n].id}    name = ${itemNumbers[n].name}</pre></div>
                             </div>
                         </div>
                     </div>
