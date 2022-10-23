@@ -169,9 +169,9 @@ function change(x) {
           $(i).attr("flip", "block");
           $(pID).attr("flip", "block");
           // reveal the button & link to the description
-          card.style.display = "block";
+          //card.style.display = "block";
           console.log(card.style.display);
-          card2.style.display = "block";
+          //card2.style.display = "block";
       }
       
       setTimeout(function() {
