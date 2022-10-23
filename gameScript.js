@@ -168,8 +168,8 @@ function change(x) {
           $(i).attr("flip", "block");
           $(pID).attr("flip", "block");
           // reveal the button & link to the description
-          card.setAttribute("style", "display:block");
-          card2.setAttribute("style", "display:block");
+          card.style.display = "block";
+          card2.style.display = "block";
       }
       
       setTimeout(function() {
