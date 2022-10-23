@@ -85,6 +85,7 @@ function start(r,l) {
     var n = 1;
     data.then((json) => {
         console.log(json);
+        console.log(json[0]);
         for (var i = 1; i <= r; i++) {
             $("table").append("<tr>");
             for (var j = 1; j <= l; j++) {
