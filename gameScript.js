@@ -44,10 +44,11 @@ window.onload = function() {
 function start(r, l) {
     // Getting data from json
     var mydata = JSON.parse(data);
-    alert(mydata[0].name);
-    alert(mydata[0].age);
-    alert(mydata[1].name);
-    alert(mydata[1].age);
+    console.log(typeof mydata);
+    //alert(mydata[0].name);
+    //alert(mydata[0].age);
+    //alert(mydata[1].name);
+    //alert(mydata[1].age);
 
     //Timer and moves
     min=0, sec=0, moves=0;
@@ -87,6 +88,7 @@ function start(r, l) {
 
     console.log(itemNumbers);
     console.log(itemNumbers[0]);
+    console.log(typeof itemNumbers);
     //Creating table
     $("table").html("");
     var n = 1;
@@ -96,7 +98,7 @@ function start(r, l) {
             $("table").append("<tr>");
             for (var j = 1; j <= l; j++) {
                 m = itemNumbers[n];
-                console.log(mydata[m].name);
+                console.log(mydata[m]);
                 //$("table").append(`<td id='${n}' onclick="change(${n})"><div class='inner'><div class='front'></div><div class='back'><p>${items[n - 1]}</p></div></div></td>`);
                 $("table").append(
                     `<td id='${n}' onclick="change(${n})">
