@@ -99,21 +99,21 @@ function start(r, l) {
         for (var j = 1; j <= l; j++) {
             console.log('n =' +n);
             m = itemNumbers[n];
-            console.log(itemNumbers);
-            console.log(itemNumbers[0]);
-            console.log(typeof itemNumbers);
-            console.log('m =' +m);
-            console.log(typeof m);
-            console.log(typeof 0);
-            console.log(mydata[m]);
-            console.log(mydata[1]);
+            //console.log(itemNumbers);
+            //console.log(itemNumbers[0]);
+            //console.log(typeof itemNumbers);
+            //console.log('m =' +m);
+            //console.log(typeof m);
+            //console.log(typeof 0);
+            //console.log(mydata[m]);
+            //console.log(mydata[1]);
             //$("table").append(`<td id='${n}' onclick="change(${n})"><div class='inner'><div class='front'></div><div class='back'><p>${items[n - 1]}</p></div></div></td>`);
             $("table").append(
                 `<td id='${n}' onclick="change(${n})">
                 <div class='inner'>
                     <div class='front'></div>
                     <div class='back container'><img class="image" id ="img${n}" src=${items[n - 1]}>
-                        <div class="middle">
+                        <div class="middle" style="display:none">
                             <div class="text"><pre>id = ${mydata[m]} name = ${mydata[0]}</pre></div>
                         </div>
                     </div>
@@ -151,7 +151,8 @@ function change(x) {
       turn=2;
 
       str = 'img' + x;
-      pre2 = document.getElementById(str).src;
+        pre2 = document.getElementById(str).src;
+        card2 = document.getElementById(str).getElementsByClassName("middle");
       //If both flipped blocks are not same
       if (pre!=pre2) {
          setTimeout(function() {
@@ -166,6 +167,9 @@ function change(x) {
           rem--;
           $(i).attr("flip", "block");
           $(pID).attr("flip", "block");
+          // reveal the button & link to the description
+          card.setAttribute("style", "display:block");
+          card2.setAttribute("style", "display:block");
       }
       
       setTimeout(function() {
@@ -179,6 +183,7 @@ function change(x) {
     else {
         str = 'img' + x;
         pre = document.getElementById(str).src;
+        card = document.getElementById(str).getElementsByClassName("middle");
         console.log(pre);
         ppID = x;
         pID = "#"+x+" .inner";
