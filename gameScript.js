@@ -20,9 +20,9 @@ var obj;
 
 var mydata = JSON.parse(data);
 alert(mydata[0].name);
-alert(mydata[0].age);
+alert(mydata[0].id);
 alert(mydata[1].name);
-alert(mydata[1].age);
+alert(mydata[1].id);
 
 //Resizing Screen
 window.onresize = init;
