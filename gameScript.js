@@ -98,6 +98,10 @@ function start(r, l) {
             $("table").append("<tr>");
             for (var j = 1; j <= l; j++) {
                 m = itemNumbers[n];
+                console.log(itemNumbers);
+                console.log(itemNumbers[0]);
+                console.log(typeof itemNumbers);
+                console.log(m);
                 console.log(mydata[m]);
                 //$("table").append(`<td id='${n}' onclick="change(${n})"><div class='inner'><div class='front'></div><div class='back'><p>${items[n - 1]}</p></div></div></td>`);
                 $("table").append(
