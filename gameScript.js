@@ -86,16 +86,16 @@ function start(r, l) {
     }
 
     console.log(itemNumbers);
-
+    console.log(itemNumbers[0]);
     //Creating table
     $("table").html("");
     var n = 1;
-
+    var m;
 
     for (var i = 1; i <= r; i++) {
             $("table").append("<tr>");
             for (var j = 1; j <= l; j++) {
-                var m = itemNumbers[n]
+                m = itemNumbers[n]
                 //$("table").append(`<td id='${n}' onclick="change(${n})"><div class='inner'><div class='front'></div><div class='back'><p>${items[n - 1]}</p></div></div></td>`);
                 $("table").append(
                     `<td id='${n}' onclick="change(${n})">
