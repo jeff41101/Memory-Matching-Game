@@ -113,7 +113,7 @@ function start(r, l) {
                 <div class='inner'>
                     <div class='front'></div>
                     <div class='back container'><img class="image" id ="img${n}" src=${items[n - 1]}>
-                        <div class="middle" style="display:none">
+                        <div class="middle" id = "${n}" style="display:none">
                             <div class="text"><pre>id = ${mydata[m]} name = ${mydata[0]}</pre></div>
                         </div>
                     </div>
@@ -151,8 +151,8 @@ function change(x) {
       turn=2;
 
       str = 'img' + x;
-        pre2 = document.getElementById(str).src;
-        card2 = document.getElementById(str).getElementsByClassName("middle");
+      pre2 = document.getElementById(str).src;
+      card2 = document.getElementById(x);
       //If both flipped blocks are not same
       if (pre!=pre2) {
          setTimeout(function() {
@@ -183,7 +183,7 @@ function change(x) {
     else {
         str = 'img' + x;
         pre = document.getElementById(str).src;
-        card = document.getElementById(str).getElementsByClassName("middle");
+        card = document.getElementById(x);
         console.log(pre);
         ppID = x;
         pID = "#"+x+" .inner";
