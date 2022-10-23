@@ -108,12 +108,13 @@ function start(r, l) {
             //console.log(mydata[m]);
             //console.log(mydata[1]);
             //$("table").append(`<td id='${n}' onclick="change(${n})"><div class='inner'><div class='front'></div><div class='back'><p>${items[n - 1]}</p></div></div></td>`);
+            //style="display:none"
             $("table").append(
                 `<td id='${n}' onclick="change(${n})">
                 <div class='inner'>
                     <div class='front'></div>
                     <div class='back container'><img class="image" id ="img${n}" src=${items[n - 1]}>
-                        <div class="middle" id = "${n}" style="display:none">
+                        <div class="middle" id ="${n}">
                             <div class="text"><pre>id = ${mydata[m]} name = ${mydata[0]}</pre></div>
                         </div>
                     </div>
@@ -151,8 +152,8 @@ function change(x) {
       turn=2;
 
       str = 'img' + x;
-      pre2 = document.getElementById(str).src;
-      card2 = document.getElementById(x);
+        pre2 = document.getElementById(str).src;
+        card2 = document.getElementById(x);
       //If both flipped blocks are not same
       if (pre!=pre2) {
          setTimeout(function() {
@@ -168,8 +169,9 @@ function change(x) {
           $(i).attr("flip", "block");
           $(pID).attr("flip", "block");
           // reveal the button & link to the description
-          card.style.display = "block";
-          card2.style.display = "block";
+          //card.style.display = "block";
+          console.log(card.style.display);
+          //card2.style.display = "block";
       }
       
       setTimeout(function() {
