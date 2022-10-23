@@ -104,7 +104,7 @@ function start(r, l) {
             console.log(typeof itemNumbers);
             console.log('m =' +m);
             console.log(typeof m);
-            console.log(mydata[parseInt(m, 10)]);
+            console.log(mydata[m.toString()]);
             console.log(mydata[1]);
             //$("table").append(`<td id='${n}' onclick="change(${n})"><div class='inner'><div class='front'></div><div class='back'><p>${items[n - 1]}</p></div></div></td>`);
             $("table").append(
