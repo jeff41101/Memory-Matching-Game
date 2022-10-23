@@ -95,6 +95,7 @@ function start(r, l) {
     for (var i = 1; i <= r; i++) {
             $("table").append("<tr>");
             for (var j = 1; j <= l; j++) {
+                var m = itemNumbers[n]
                 //$("table").append(`<td id='${n}' onclick="change(${n})"><div class='inner'><div class='front'></div><div class='back'><p>${items[n - 1]}</p></div></div></td>`);
                 $("table").append(
                     `<td id='${n}' onclick="change(${n})">
@@ -102,7 +103,7 @@ function start(r, l) {
                         <div class='front'></div>
                         <div class='back container'><img class="image" id ="img${n}" src=${items[n - 1]}>
                             <div class="middle">
-                                <div class="text"><pre>id = ${mydata[itemNumbers[n]].name}</pre></div>
+                                <div class="text"><pre>id = ${mydata[m].name}</pre></div>
                             </div>
                         </div>
                     </div>
