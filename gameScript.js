@@ -88,6 +88,8 @@ function start(r,l) {
         console.log(json[0]);
         console.log(json[0].id);
         console.log(json[0].name);
+        var models = json;
+        console.log(typeof models);
 
         for (var i = 1; i <= r; i++) {
             $("table").append("<tr>");
@@ -99,7 +101,7 @@ function start(r,l) {
                         <div class='front'></div>
                         <div class='back container'><img class="image" id ="img${n}" src=${items[n - 1]}>
                             <div class="middle">
-                                <div class="text"><pre>id = ${json[0]}    name = ${json[itemNumbers[n]]}</pre></div>
+                                <div class="text"><pre>id = ${models[0]}    name = ${json[itemNumbers[n]]}</pre></div>
                             </div>
                         </div>
                     </div>
