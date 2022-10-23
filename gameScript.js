@@ -39,6 +39,7 @@ data = fetch('./data.json')
 
 data.then(value => {
     console.log(value);
+    console.log(value[0]);
 }).catch(err => {
     console.log(err); // 👉️ "Something went wrong"
 });
