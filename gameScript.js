@@ -51,8 +51,6 @@ console.log(data);
 data = JSON.parse(data);
 
 console.log(data);
-console.log(data[0].id);
-console.log(data[0].name);
 
 //Showing instructions
 window.onload = function() {
