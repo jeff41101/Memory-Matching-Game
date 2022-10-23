@@ -27,30 +27,12 @@ function init() {
    $('#ol').height(H+"px");
 }
 
-var data;
-var temp = [];
-
-data = fetch('./data.json')
+var data = fetch('./data.json')
     .then((response) => response.json())
     .then((json) => {
         console.log(json);
         return json;
     });
-
-data.then(value => {
-    console.log(value);
-    console.log(value[0]);
-}).catch(err => {
-    console.log(err); // 👉️ "Something went wrong"
-});
-
-console.log(data);
-data = JSON.stringify(data);
-
-console.log(data);
-data = JSON.parse(data);
-
-console.log(data);
 
 //Showing instructions
 window.onload = function() {
