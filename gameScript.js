@@ -97,12 +97,12 @@ function start(r, l) {
     for (var i = 1; i <= r; i++) {
             $("table").append("<tr>");
         for (var j = 1; j <= l; j++) {
-            console.log(n);
+            console.log('n =' +n);
             m = itemNumbers[n];
             console.log(itemNumbers);
             console.log(itemNumbers[0]);
             console.log(typeof itemNumbers);
-            console.log(m);
+            console.log('m =' +m);
             console.log(typeof m);
             console.log(mydata[parseInt(m, 10)]);
             console.log(mydata[1]);
