@@ -87,6 +87,7 @@ function start(r,l) {
         console.log(json);
         console.log(json[0]);
         console.log(json[0].id);
+        console.log(json[0].name);
 
         for (var i = 1; i <= r; i++) {
             $("table").append("<tr>");
