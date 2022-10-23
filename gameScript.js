@@ -96,7 +96,7 @@ function start(r,l) {
                         <div class='front'></div>
                         <div class='back container'><img class="image" id ="img${n}" src=${items[n - 1]}>
                             <div class="middle">
-                                <div class="text"><pre>id = ${json[itemNumbers[n]]['id']}    name = ${json[itemNumbers[n]]['name']}</pre></div>
+                                <div class="text"><pre>id = ${json[itemNumbers[n]]}    name = ${json[itemNumbers[n]]}</pre></div>
                             </div>
                         </div>
                     </div>
