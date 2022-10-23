@@ -18,6 +18,12 @@ if (p) while (--p) {
 var pre="", pID, ppID=0, turn=0, t="transform", flip="rotateY(180deg)", flipBack="rotateY(0deg)", time, mode;
 var obj;
 
+var mydata = JSON.parse(data);
+alert(mydata[0].name);
+alert(mydata[0].age);
+alert(mydata[1].name);
+alert(mydata[1].age);
+
 //Resizing Screen
 window.onresize = init;
 function init() {
@@ -27,12 +33,12 @@ function init() {
    $('#ol').height(H+"px");
 }
 
-var data = fetch('./data.json')
-    .then((response) => response.json())
-    .then((json) => {
-        console.log(json);
-        return json;
-    });
+//var data = fetch('./data.json')
+//    .then((response) => response.json())
+//    .then((json) => {
+//        console.log(json);
+//        return json;
+//    });
 
 //Showing instructions
 window.onload = function() {
@@ -83,15 +89,9 @@ function start(r,l) {
     //Creating table
     $("table").html("");
     var n = 1;
-    data.then((json) => {
-        console.log(json);
-        console.log(json[0]);
-        console.log(json[0].id);
-        console.log(json[0].name);
-        var models = json;
-        console.log(typeof models);
 
-        for (var i = 1; i <= r; i++) {
+
+    for (var i = 1; i <= r; i++) {
             $("table").append("<tr>");
             for (var j = 1; j <= l; j++) {
                 //$("table").append(`<td id='${n}' onclick="change(${n})"><div class='inner'><div class='front'></div><div class='back'><p>${items[n - 1]}</p></div></div></td>`);
@@ -110,7 +110,7 @@ function start(r,l) {
             }
             $("table").append("</tr>");
         }
-    });
+
     //Hiding instructions screen
     $("#ol").fadeOut(500);
 }
