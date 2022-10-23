@@ -89,7 +89,15 @@ function start(r,l) {
         items[c] = items[p];
         items[p] = tmp;
     }
-    
+
+    // Grabbing the numbers of new item array
+    var itemNumbers = [];
+    for (var i=0;i<items.length;i++) {
+        itemNumbers.push(items[i].substring(10, items[i].length - 4));
+    }
+
+    console.log(itemNumbers);
+
     //Creating table
     $("table").html("");
     var n=1;
