@@ -20,9 +20,9 @@ var obj;
 
 var mydata = JSON.parse(data);
 alert(mydata[0].name);
-alert(mydata[0].id);
+alert(mydata[0].age);
 alert(mydata[1].name);
-alert(mydata[1].id);
+alert(mydata[1].age);
 
 //Resizing Screen
 window.onresize = init;
@@ -101,7 +101,7 @@ function start(r,l) {
                         <div class='front'></div>
                         <div class='back container'><img class="image" id ="img${n}" src=${items[n - 1]}>
                             <div class="middle">
-                                <div class="text"><pre>id = ${models[0]}    name = ${json[itemNumbers[n]]}</pre></div>
+                                <div class="text"><pre>id = ${mydata[itemNumbers[n]].name}    name = ${mydata[itemNumbers[n]].age}</pre></div>
                             </div>
                         </div>
                     </div>
