@@ -18,12 +18,6 @@ if (p) while (--p) {
 var pre="", pID, ppID=0, turn=0, t="transform", flip="rotateY(180deg)", flipBack="rotateY(0deg)", time, mode;
 var obj;
 
-var mydata = JSON.parse(data);
-alert(mydata[0].name);
-alert(mydata[0].age);
-alert(mydata[1].name);
-alert(mydata[1].age);
-
 //Resizing Screen
 window.onresize = init;
 function init() {
@@ -47,7 +41,14 @@ window.onload = function() {
 }
 
 //Starting the game
-function start(r,l) {
+function start(r, l) {
+    // Getting data from json
+    var mydata = JSON.parse(data);
+    alert(mydata[0].name);
+    alert(mydata[0].age);
+    alert(mydata[1].name);
+    alert(mydata[1].age);
+
     //Timer and moves
     min=0, sec=0, moves=0;
     $("#time").html("Time: 00:00");
