@@ -92,7 +92,7 @@ function start(r, l) {
     //Creating table
     $("table").html("");
     var n = 1;
-    var m;
+    var m = 0;
 
     for (var i = 1; i <= r; i++) {
             $("table").append("<tr>");
@@ -104,6 +104,7 @@ function start(r, l) {
             console.log(typeof itemNumbers);
             console.log(m);
             console.log(mydata[m]);
+            console.log(mydata[1]);
             //$("table").append(`<td id='${n}' onclick="change(${n})"><div class='inner'><div class='front'></div><div class='back'><p>${items[n - 1]}</p></div></div></td>`);
             $("table").append(
                 `<td id='${n}' onclick="change(${n})">
