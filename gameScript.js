@@ -107,7 +107,7 @@ function start(r, l) {
             console.log(typeof 0);
             console.log(mydata[m]);
             console.log(mydata[1]);
-            $("table").append(`<td id='${n}' onclick="change(${n})"><div class='inner'><div class='front'></div><div class='back'><p>${items[n - 1]}</p></div></div></td>`);
+            //$("table").append(`<td id='${n}' onclick="change(${n})"><div class='inner'><div class='front'></div><div class='back'><p>${items[n - 1]}</p></div></div></td>`);
             //style="display:none"
             $("table").append(
                 `<td id='${n}' onclick="change(${n})">
