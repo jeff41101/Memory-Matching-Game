@@ -82,27 +82,28 @@ function start(r,l) {
 
     //Creating table
     $("table").html("");
-    var n=1;
-    for (var i = 1;i<=r;i++) {
-        $("table").append("<tr>");
-        for (var j = 1; j <= l; j++) {
-            //$("table").append(`<td id='${n}' onclick="change(${n})"><div class='inner'><div class='front'></div><div class='back'><p>${items[n - 1]}</p></div></div></td>`);
-            $("table").append(
-                `<td id='${n}' onclick="change(${n})">
+    var n = 1;
+    data.then((json) => {
+        for (var i = 1; i <= r; i++) {
+            $("table").append("<tr>");
+            for (var j = 1; j <= l; j++) {
+                //$("table").append(`<td id='${n}' onclick="change(${n})"><div class='inner'><div class='front'></div><div class='back'><p>${items[n - 1]}</p></div></div></td>`);
+                $("table").append(
+                    `<td id='${n}' onclick="change(${n})">
                     <div class='inner'>
                         <div class='front'></div>
                         <div class='back container'><img class="image" id ="img${n}" src=${items[n - 1]}>
                             <div class="middle">
-                                <div class="text"><pre>id = ${itemNumbers[n].id}    name = ${itemNumbers[n].name}</pre></div>
+                                <div class="text"><pre>id = ${json[itemNumbers[n]].id}    name = ${json[itemNumbers[n]].name}</pre></div>
                             </div>
                         </div>
                     </div>
                 </td>`);
-            n++;
-         }
-         $("table").append("</tr>");
-    }
-    
+                n++;
+            }
+            $("table").append("</tr>");
+        }
+    });
     //Hiding instructions screen
     $("#ol").fadeOut(500);
 }
