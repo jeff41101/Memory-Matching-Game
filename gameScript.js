@@ -44,7 +44,7 @@ window.onload = function() {
 function start(r, l) {
     // Getting data from json
     var mydata = JSON.parse(data);
-    console.log(typeof mydata);
+    console.log('mydata = ' + mydata);
     //alert(mydata[0].name);
     //alert(mydata[0].age);
     //alert(mydata[1].name);
@@ -99,14 +99,10 @@ function start(r, l) {
         for (var j = 1; j <= l; j++) {
             console.log('n =' +n);
             m = itemNumbers[n];
-            console.log(itemNumbers);
-            console.log(itemNumbers[0]);
-            console.log(typeof itemNumbers);
+            console.log('itemNumbers = ' + itemNumbers);
             console.log('m =' +m);
-            console.log(typeof m);
-            console.log(typeof 0);
             console.log(mydata[m]);
-            console.log(mydata[1]);
+            console.log(mydata[13]);
             //$("table").append(`<td id='${n}' onclick="change(${n})"><div class='inner'><div class='front'></div><div class='back'><p>${items[n - 1]}</p></div></div></td>`);
             //style="display:none"
             $("table").append(
@@ -170,8 +166,7 @@ function change(x) {
           $(pID).attr("flip", "block");
           // reveal the button & link to the description
           card.style.display = "block";
-          console.log(card.style.display);
-          //card2.style.display = "block";
+          card2.style.display = "block";
       }
       
       setTimeout(function() {
