@@ -101,6 +101,7 @@ function start(r, l) {
                     <div class='back container'><img class="image" id ="img${n}" src=${items[n - 1]}>
                         <div class="middle" id ="div${n}" style="display:none">
                             <div class="text"><pre>id = ${mydata[1].name} name = ${mydata[0].name}</pre></div>
+                            <input type="button" onclick="location.href='https://google.com';" value="Go to Google" />
                         </div>
                     </div>
                 </div>
