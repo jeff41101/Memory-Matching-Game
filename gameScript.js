@@ -100,7 +100,7 @@ function start(r, l) {
                     <div class='front'></div>
                     <div class='back container'><img class="image" id ="img${n}" src=${items[n - 1]}>
                         <div class="middle" id ="div${n}" style="display:none">
-                            <div class="text"><pre>id = ${mydata[m].name} name = ${mydata[0].name}</pre></div>
+                            <div class="text"><pre>id = ${mydata[1].name} name = ${mydata[0].name}</pre></div>
                         </div>
                     </div>
                 </div>
