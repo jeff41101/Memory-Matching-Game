@@ -177,6 +177,6 @@ button:hover, button:active {
 .text {
     background-color: #04AA6D;
     color: white;
-    font-size: 16px;
-    padding: 16px 32px;
+    font-size: 10px;
+    padding: 8px 16px;
 }
