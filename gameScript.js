@@ -1,7 +1,7 @@
 //var em = ["💐", "🌹", "🌻", "🏵️", "🌺", "🌴", "🌈", "🍓", "🍒", "🍎", "🍉", "🍊", "🥭", "🍍", "🍋", "🍏", "🍐", "🥝", "🍇", "🥥", "🍅", "🌶️", "🍄", "🧅", "🥦", "🥑", "🍔", "🍕", "🧁", "🎂", "🍬", "🍩", "🍫", "🎈"];
 var em = [];
 //Shuffling above array
-for (var n = 18; n > 0; n--) {
+for (var n = 19; n > 0; n--) {
     var str = `Images/img${n - 1}.png`;
     em.push(str);
 }
@@ -13,7 +13,7 @@ if (p) while (--p) {
    em[c] = em[p];
    em[p] = tmp;
 }
-
+console.log(em);
 //Variables
 var pre="", pID, ppID=0, turn=0, t="transform", flip="rotateY(180deg)", flipBack="rotateY(0deg)", time, mode;
 var obj;
@@ -68,7 +68,7 @@ function start(r, l) {
         items[c] = items[p];
         items[p] = tmp;
     }
-
+    console.log('items =' + items);
     // Grabbing the numbers of new item array
     var itemNumbers = [];
     for (var i=0;i<items.length;i++) {
@@ -86,21 +86,22 @@ function start(r, l) {
     for (var i = 1; i <= r; i++) {
             $("table").append("<tr>");
         for (var j = 1; j <= l; j++) {
-            console.log('n =' +n);
-            m = itemNumbers[n];
-            console.log('itemNumbers = ' + itemNumbers);
-            console.log('m =' +m);
-            console.log(mydata[m]);
-            console.log(mydata[13]);
-            //$("table").append(`<td id='${n}' onclick="change(${n})"><div class='inner'><div class='front'></div><div class='back'><p>${items[n - 1]}</p></div></div></td>`);
-            //style="display:none"
+
+            m = itemNumbers[n - 1];
+            // Testing
+            //console.log('n =' +n);  
+            //console.log('itemNumbers = ' + itemNumbers);
+            //console.log('m =' +m);
+            //console.log(mydata[m].name);
+            //console.log(mydata[m].link);
+
             $("table").append(
                 `<td id='${n}' onclick="change(${n})">
                 <div class='inner'>
                     <div class='front'></div>
-                    <div class='back container'><img class="image" id ="img${n}" src=${items[n - 1]}>
+                    <div class='back container'><img class="image" id ="img${n}" src=${items[n-1]}>
                         <div class="middle" id ="div${n}" style="display:none">
-                            <input class="text" type="button" onclick="javascript:window.open('http://www.java2s.com')" value="${mydata[0].name}" />
+                            <input class="text" type="button" onclick="javascript:window.open('${mydata[m].link}')" value="${mydata[m].name}" />
                         </div>
                     </div>
                 </div>
@@ -125,6 +126,9 @@ function change(x) {
     console.log('f =' + f);
     console.log('b =' + b);
 
+    console.log(turn);
+    console.log($(i).attr("flip"));
+    console.log(ppID);
   
   //Dont flip for these conditions
   if (turn==2 || $(i).attr("flip")=="block" || ppID==x) {}
@@ -138,6 +142,7 @@ function change(x) {
       blockStr = 'div' + x;
       str = 'img' + x;
       pre2 = document.getElementById(str).src;
+      card2El = document.getElementById(str);
       card2 = document.getElementById(blockStr);
       //If both flipped blocks are not same
       if (pre!=pre2) {
@@ -156,6 +161,8 @@ function change(x) {
           // reveal the button & link to the description
           card.style.display = "block";
           card2.style.display = "block";
+          cardEl.parentNode.classList.add("blur");
+          card2El.parentNode.classList.add("blur");
       }
       
       setTimeout(function() {
@@ -170,6 +177,7 @@ function change(x) {
         str = 'img' + x;
         blockStr = 'div' + x;
         pre = document.getElementById(str).src;
+        cardEl = document.getElementById(str);
         card = document.getElementById(blockStr);
         console.log(pre);
         ppID = x;
@@ -187,7 +195,6 @@ function change(x) {
               time = `${min} minute(s) and ${sec} second(s)`;
           }
           setTimeout(function() {
-              //$("#ol").html(`<center><div id="iol"><h2>Congrats!</h2><p style="font-size:23px;padding:10px;">You completed the ${mode} mode in ${moves} moves. It took you ${time}.</p><p style="font-size:18px">Comment Your Score!<br/>Play Again ?</p><button onclick="start(3, 4)">3 x 4</button> <button onclick="start(4, 4)" style="w">4 x 4</button><button onclick="start(4, 5)">4 x 5</button><button onclick="start(5, 6)">5 x 6</button><button onclick="start(6, 6)">6 x 6</button></div></center>`);
               $("#ol").html(`<center><div id="iol"><h2>Congrats!</h2><p style="font-size:23px;padding:10px;">You completed the ${mode} mode in ${moves} moves. It took you ${time}.</p><p style="font-size:18px">Comment Your Score!<br/>Play Again ?</p><button onclick="start(3, 4)">3 x 4</button> <button onclick="start(4, 4)" style="w">4 x 4</button><button onclick="start(4, 5)">4 x 5</button>`);
               var stats = { moves: moves, time: time };
               window.parent.postMessage(stats, '*');

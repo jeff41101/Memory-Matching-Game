@@ -155,7 +155,11 @@ button:hover, button:active {
     backface-visibility: hidden;
 }
 
-.container:hover .image {
+/*.container:hover .image {
+    opacity: 0.3;
+}*/
+
+.blur:hover .image {
     opacity: 0.3;
 }
 
