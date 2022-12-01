@@ -161,8 +161,8 @@ function change(x) {
           // reveal the button & link to the description
           card.style.display = "block";
           card2.style.display = "block";
-          cardEl.parentNode.classList.add("blur");
-          card2El.parentNode.classList.add("blur");
+          cardEl.parentNode.classList.add("blurry");
+          card2El.parentNode.classList.add("blurry");
       }
       
       setTimeout(function() {
@@ -192,7 +192,9 @@ function change(x) {
               time = `${sec} seconds`;
           }
           else {
-              time = `${min} minute(s) and ${sec} second(s)`;
+              timeInSec = min * 60 + sec;
+              time = `${timeInSec} second(s)`
+              //time = `${min} minute(s) and ${sec} second(s)`;
           }
           setTimeout(function() {
               $("#ol").html(`<center><div id="iol"><h2>Congrats!</h2><p style="font-size:23px;padding:10px;">You completed the ${mode} mode in ${moves} moves. It took you ${time}.</p><p style="font-size:18px">Comment Your Score!<br/>Play Again ?</p><button onclick="start(3, 4)">3 x 4</button> <button onclick="start(4, 4)" style="w">4 x 4</button><button onclick="start(4, 5)">4 x 5</button>`);

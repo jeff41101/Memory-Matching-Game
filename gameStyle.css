@@ -159,7 +159,7 @@ button:hover, button:active {
     opacity: 0.3;
 }*/
 
-.blur:hover .image {
+.blurry:hover .image {
     opacity: 0.3;
 }
 
