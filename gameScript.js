@@ -114,14 +114,14 @@ function start(r, l) {
     itemNumbers.push(parseInt(items[i].substring(10, items[i].length - 4), 10));
   }
 
-  console.log(itemNumbers);
-  console.log(itemNumbers[0]);
-  console.log(typeof itemNumbers);
+  // console.log(itemNumbers);
+  // console.log(itemNumbers[0]);
+  // console.log(typeof itemNumbers);
   //Creating table
   $("table").html("");
   var n = 1;
   var m = 0;
-
+  var num = 1;
   for (var i = 1; i <= r; i++) {
     $("table").append("<tr>");
     for (var j = 1; j <= l; j++) {
@@ -146,7 +146,7 @@ function start(r, l) {
       $("table").append(
         `<td id='${n}' onclick="change(${n})">
                 <div class='inner'>
-                    <div class='front'></div>
+                    <div class='front' style="text-align: center;">${num}</div>
                     <div class='back container'><img class="image" id ="img${n}" src=${
           results[itemNumbers[n - 1]].img_base64
         }>
@@ -160,6 +160,7 @@ function start(r, l) {
             </td>`
       );
       n++;
+      num++;
     }
     $("table").append("</tr>");
   }
