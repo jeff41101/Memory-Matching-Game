@@ -1,17 +1,38 @@
+// DynamoDB Version
+// jQuery.extend({
+//   getImage: function () {
+//     let result = null;
+//     $.ajax({
+//       url: "https://wjuc7h96k7.execute-api.ap-northeast-1.amazonaws.com/dev/GetImage",
+//       method: "POST",
+//       timeout: 0,
+//       headers: {
+//         Accept: "application/json",
+//         "x-api-key": "WHJzpbI0r29A01Hbsg5H776YNuyWe5FI5XCgplRu",
+//       },
+//       async: false,
+//       success: function (data) {
+//         result = data;
+//       },
+//     });
+//     return result;
+//   },
+// });
+
 jQuery.extend({
   getImage: function () {
     let result = null;
     $.ajax({
-      url: "https://wjuc7h96k7.execute-api.ap-northeast-1.amazonaws.com/dev/GetImage",
+      url: "https://7wda3149g7.execute-api.ap-northeast-1.amazonaws.com/dev/GetImages",
       method: "POST",
       timeout: 0,
       headers: {
         Accept: "application/json",
-        "x-api-key": "WHJzpbI0r29A01Hbsg5H776YNuyWe5FI5XCgplRu",
+        "x-api-key": "WvaKUMz6q5aH6DtSdOWXO5HxIQnOrzfJ3apbIo4F",
       },
       async: false,
       success: function (data) {
-        result = data;
+        result = data["result"];
       },
     });
     return result;
