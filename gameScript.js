@@ -147,23 +147,6 @@ function start(r, l) {
     $("table").append("<tr>");
     for (var j = 1; j <= l; j++) {
       m = itemNumbers[n - 1];
-      // Testing
-      //console.log('n =' +n);
-      //console.log('itemNumbers = ' + itemNumbers);
-      //console.log('m =' +m);
-      //console.log(mydata[m].name);
-      //console.log(mydata[m].link);
-
-      // <div class="middle" id="div${n}" style="display:none">
-      //   <input
-      //     class="text"
-      //     type="button"
-      //     onclick="javascript:window.open('$ {
-      //   mydata[m].link
-      // }')"
-      //     value="${mydata[m].name}"
-      //   />
-      // </div>;
       $("table").append(
         `<td id='${n}' onclick="change(${n})">
                 <div class='inner'>
