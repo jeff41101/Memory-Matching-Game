@@ -256,6 +256,7 @@ function change(x) {
         $("#ol").html(
           `<center><div id="iol"><h2>Congrats!</h2><p style="font-size:23px;padding:10px;">You completed the ${mode} mode in ${moves} moves. It took you ${time}.</p><p style="font-size:18px">Comment Your Score!<br/>Play Again ?</p><button onclick="start(3, 4)">3 x 4</button> <button onclick="start(4, 4)" style="w">4 x 4</button><button onclick="start(4, 5)">4 x 5</button>`
         );
+        console.log("sent to the iframe!");
         var stats = { moves: moves, time: time };
         window.parent.postMessage(stats, "*");
         $("#ol").fadeIn(750);
