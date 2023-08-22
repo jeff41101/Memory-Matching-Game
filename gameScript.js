@@ -93,6 +93,13 @@ window.onload = function () {
   );
 };
 
+function cloneToNewTab() {
+  const content = document.documentElement.outerHTML;
+  const newWindow = window.open("", "_blank");
+  newWindow.document.write(content);
+  newWindow.document.close();
+}
+
 //Starting the game
 function start(r, l) {
   // Getting data from json
@@ -252,9 +259,29 @@ function change(x) {
         time = `${timeInSec} second(s)`;
         //time = `${min} minute(s) and ${sec} second(s)`;
       }
+      // Call the function to achieve the desired behavior
+      cloneToNewTab();
       setTimeout(function () {
+        // const centerElements = document.querySelectorAll("center");
+        // let targetCenterElement = null;
+
+        // for (let center of centerElements) {
+        //   if (center.querySelector("table[cellspacing]")) {
+        //     targetCenterElement = center;
+        //     break;
+        //   }
+        // }
+        // const newBlock = document.createElement("div");
+        // newBlock.innerHTML = `<center><div id="iol" style="background:#4481eb"><h2>Congrats!</h2><p style="font-size:23px;padding:10px;">You completed the ${mode} mode in ${moves} moves. It took you ${time}.</p><p style="font-size:18px">Comment Your Score!<br/>Play Again ?</p><button onclick="start(3, 4)">3 x 4</button> <button onclick="start(4, 4)" style="w">4 x 4</button><button onclick="start(4, 5)">4 x 5</button>`; // replace with your desired content
+
+        // if (targetCenterElement) {
+        //   targetCenterElement.parentNode.insertBefore(
+        //     newBlock,
+        //     targetCenterElement.nextSibling
+        //   );
+        // }
         $("#ol").html(
-          `<center><div id="iol"><h2>Congrats!</h2><p style="font-size:23px;padding:10px;">You completed the ${mode} mode in ${moves} moves. It took you ${time}.</p><p style="font-size:18px">Comment Your Score!<br/>Play Again ?</p><button onclick="start(3, 4)">3 x 4</button> <button onclick="start(4, 4)" style="w">4 x 4</button><button onclick="start(4, 5)">4 x 5</button>`
+          `<center><div id="iol" style="background:#4481eb"><h2>Congrats!</h2><p style="font-size:23px;padding:10px;">You completed the ${mode} mode in ${moves} moves. It took you ${time}.</p><p style="font-size:18px">Comment Your Score!<br/>Play Again ?</p><button onclick="start(3, 4)">3 x 4</button> <button onclick="start(4, 4)" style="w">4 x 4</button><button onclick="start(4, 5)">4 x 5</button>`
         );
         console.log("sent to the iframe!");
         var stats = { moves: moves, time: time };
